@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_15_155245) do
+ActiveRecord::Schema.define(version: 2020_03_16_153820) do
+
+  create_table "orders", force: :cascade do |t|
+    t.string "customer_name"
+    t.string "uuid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "products", force: :cascade do |t|
     t.string "sku"
