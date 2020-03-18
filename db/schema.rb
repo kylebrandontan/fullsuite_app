@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_16_154859) do
+ActiveRecord::Schema.define(version: 2020_03_18_152336) do
 
   create_table "order_items", force: :cascade do |t|
     t.integer "quantity"
@@ -34,6 +34,15 @@ ActiveRecord::Schema.define(version: 2020_03_16_154859) do
     t.string "name"
     t.decimal "price"
     t.decimal "cost_of_goods"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "settings", force: :cascade do |t|
+    t.boolean "vat"
+    t.decimal "vat_percentage"
+    t.boolean "service_charge"
+    t.decimal "service_charge_percentage"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
