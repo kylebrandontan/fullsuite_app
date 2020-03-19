@@ -36,7 +36,7 @@ gem 'webpacker'
 gem 'devise'
 gem 'react-rails'
 gem 'active_model_serializers'
-
+gem 'money-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
