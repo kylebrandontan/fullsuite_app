@@ -1,0 +1,32 @@
+<div class="container">
+  <%= link_to "Back to Products", products_path, class: 'btn btn-primary' %>
+  <h1>Product</h1>
+    <table class = "table">
+      <tbody>
+        <tr>
+          <td>Name</td>
+          <td>
+            <%= @product.name %>
+          </td>
+        </tr>
+        <tr>
+          <td>SKU</td>
+          <td>
+            <%= @product.sku %>
+          </td>
+        </tr>
+        <tr>
+          <td>Price</td>
+          <td>
+            <%= @product.price %>
+          </td>
+        </tr>
+        <tr>
+          <td>Cost of Goods</td>
+          <td>
+            <%= @product.cost_of_goods %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>

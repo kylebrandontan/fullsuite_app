@@ -3,6 +3,12 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
+  def show
+    @product = Product.find(params[:id])
+  end
+
+  def edit; end
+
   def new
     @product = Product.new
   end
@@ -18,6 +24,20 @@ class ProductsController < ApplicationController
       render :new
     end
   end
+
+  def updated
+    if @product.update(product_params)
+      flash.notice = 'Successfully updated product.'
+
+      redirect_to product_path(@product)
+    else
+      render :edit
+    end
+  end
+
+  def delete
+  end
+
 
 private
 
