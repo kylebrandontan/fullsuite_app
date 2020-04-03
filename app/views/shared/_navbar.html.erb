@@ -1,10 +1,27 @@
 <nav class = "nav nav--color-primary">
+  <% if user_signed_in? %>
+  <div class="">
     <ul>
       <li>
-        <%= link_to "Sign In", root_path %>
+        <%= link_to "Products", products_path, class: "nav-link" %>
       </li>
       <li>
-        <%= link_to "Test", "#" %>
+        <%= link_to "Orders", orders_path, class: "nav-link" %>
       </li>
     </ul>
+    <% else %>
+      <div class="text">
+        Posse!
+      </div>
+      <% end %>
+  </div>
+  <div class="">
+    <% if user_signed_in? %>
+      Hi there, <%= current_user.email %>
+      <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "button" %>
+    <% else %>
+      <%= link_to "Sign in", user_session_path, class: "button" %>
+      <%= link_to "Sign up", new_user_registration_path, class: "button" %>
+    <% end %>
+  </div>
 </nav>
