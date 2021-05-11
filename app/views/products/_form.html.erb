@@ -1,0 +1,29 @@
+<div class="container">
+  <%= form_with model: product, local: true, id: "product-form" do |f| %>
+  <div class="form__item form-small">
+    <%= f.label :name, "Product Name" %>
+    <%= f.text_field :name, class: "form__input", placeholder: true %>
+    <%= render_error(product, :name) %>
+    <p class ="form__description">e.g. "iPhone X"</p>
+  </div>
+  <div class="form__item">
+    <%= f.label :sku, "SKU" %>
+    <%= f.text_field :sku, class: "form__input" %>
+    <%= render_error(product, :sku) %>
+    <p class ="form__description">e.g. APL-X</p>
+  </div>
+  <div class="form__item">
+    <%= f.label :price, "Price" %>
+    <%= f.text_field :price, class: "form__input" %>
+    <%= render_error(product, :price) %>
+    <p class ="form__description">e.g. 60,000</p>
+  </div>
+  <div class="form__item">
+    <%= f.label :cost_of_goods, "Cost of Goods" %>
+    <%= f.text_field :cost_of_goods, class: "form__input" %>
+    <%= render_error(product, :cost_of_goods) %>
+    <p class ="form__description">e.g. 40,000</p>
+  </div>
+    <%= f.submit "Save Product", class: "button", id: "submit-button" %>
+  <% end %>
+</div>

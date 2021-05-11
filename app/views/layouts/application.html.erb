@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PosSystem</title>
+    <title>Posse</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag :application, "https://cdn.orangecss.com/1.4.2/css/orange.min.css" %>
+    <%= javascript_include_tag :application, "https://cdn.orangecss.com/1.4.2/js/orange.min.js" %>
   </head>
 
   <body>
+    <%= render "shared/navbar" %>
+    <%= render "shared/flash" %>
+
     <%= yield %>
+    
   </body>
 </html>

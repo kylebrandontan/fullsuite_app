@@ -1,0 +1,5 @@
+<% if flash[:notice]|| flash[:alert] %>
+  <div class="message message--color-<%= flash[:alert].present? ? 'green' : 'red' %>">
+    <%= flash[:notice] || flash[:alert] %>
+  </div>
+<% end %>
